@@ -55,12 +55,12 @@ python manage.py runserver
 
 * to get Google Auth working:
 
-** go to https://console.developers.google.com
+  * go to https://console.developers.google.com
 
-** create an application
+  * create an application
 
-** set up oauth2 credentials as a web application, with your origin, e.g. https://myhelios.example.com, and your auth callback, which, based on our example, is https://myhelios.example.com/auth/after/
+  * set up oauth2 credentials as a web application, with your origin, e.g. https://myhelios.example.com, and your auth callback, which, based on our example, is https://myhelios.example.com/auth/after/
 
-** still in the developer console, enable the Google+ API and Google People API.
+  * still in the developer console, enable the Google+ API and Google People API.
 
-** set the GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET configuration variables accordingly.
+  * set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET variables in configuration file `.env` accordingly.

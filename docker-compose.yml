@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+  postgres:
+    restart: always
+    image: "postgres"
+    ports:
+      - "5432:5432"
+    env_file:
+      - database.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+
+  rabbitmq:
+    restart: always
+    image: "rabbitmq"
+    env_file:
+      - rabbitmq.env
+
+  web:
+    restart: always
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - rabbitmq
+    links:
+      - postgres:postgres
+
+volumes:
+  pgdata:
